@@ -34,11 +34,47 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">User Management</h6>
-                <a class="collapse-item" href="{{route('list')}}">Users List</a>
-                <a class="collapse-item" href="{{route('salary')}}">Salary List</a>
+                <a class="collapse-item" href="{{route('users.index')}}">Users List</a>
+                <a class="collapse-item" href="{{route('users.create')}}">Add User</a>
             </div>
         </div>
     </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Categories</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar" style="">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Category Management</h6>
+                <a class="collapse-item" href="">Category List</a>
+                <a class="collapse-item" href="">Add Project</a>
+        
+            </div>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>Projects</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Custom Utilities:</h6>
+                <a class="collapse-item" href="">Projects List</a>
+                <a class="collapse-item" href="">Add Project</a>
+              
+            </div>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>Contacts</span>
+        </a>
+        
+    </li>
+
 
     <!-- Nav Item - Utilities Collapse Menu -->
     {{-- <li class="nav-item">
