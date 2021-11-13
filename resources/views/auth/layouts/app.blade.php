@@ -9,7 +9,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>{{('app.name','Laravel')}} -@yield('title')</title>
+   
+    <title>{{ config('app.name', 'Project') }} - @yield('title')</title>
+
 
     <!-- Custom fonts for this template-->
     <link href="{{asset('admin/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
