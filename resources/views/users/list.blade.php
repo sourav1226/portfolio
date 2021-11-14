@@ -5,17 +5,18 @@
 
     <!-- Page Heading -->
     <div style="display: flex; justify-content: space-between" class="mb-2">
-    <h1 class="h3 mb-2 text-gray-800">Users</h1>
-    <button type="button" class="btn btn-primary"><a href="{{route('users.create')}}" style="text-decoration: none; color: #fff;">Add User</a>
-     </button>
+        <h1 class="h3 mb-2 text-gray-800">Users</h1>
+        <button type="button" class="btn btn-primary"><a href="{{route('users.create')}}"
+                style="text-decoration: none; color: #fff;">Add User</a>
+        </button>
 
     </div>
     {{-- Alert Messages --}}
     @include('common.alert')
-   
+
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
-       <div class="card-body">
+        <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
@@ -31,16 +32,18 @@
                             <td>{{$user->name}}</td>
                             <td>{{$user->email}}</td>
                             <td style="display: flex; gap: calc(5px + 1vmin);">
-                                <button type="button" class="btn btn-primary"> <a href="{{route('users.edit',['user'=> $user->id])}}" style="text-decoration: none; color: #fff;">Edit</a>
-                                    </button>
-                               <form method="POST" action="{{route('users.destroy' , ['user'=> $user->id] )}}" >
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-danger" type="submit" >
-                                    Delete
+                                <button type="button" class="btn btn-primary"> <a
+                                        href="{{route('users.edit',['user'=> $user->id])}}"
+                                        style="text-decoration: none; color: #fff;">Edit</a>
                                 </button>
-                            
-                            </form>
+                                <form method="POST" action="{{route('users.destroy' , ['user'=> $user->id] )}}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger" type="submit">
+                                        Delete
+                                    </button>
+
+                                </form>
                             </td>
                         </tr>
                         @endforeach
