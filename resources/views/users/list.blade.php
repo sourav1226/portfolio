@@ -10,12 +10,9 @@
      </button>
 
     </div>
-    
-
-    {{-- Message --}}
-    @if (session('success'))
-    <span class="text-success">{{session('success')}}</span>
-    @endif
+    {{-- Alert Messages --}}
+    @include('common.alert')
+   
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
        <div class="card-body">
