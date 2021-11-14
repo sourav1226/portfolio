@@ -13,7 +13,6 @@
     </div>
     {{-- Alert Messages --}}
     @include('common.alert')
-
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-body">
@@ -51,6 +50,7 @@
                     </tbody>
                 </table>
             </div>
+            {{$users->links()}}
         </div>
     </div>
 

@@ -18,7 +18,7 @@ class UserController extends Controller
     public function index()
 
     {
-        $users= User::select('id','email','name')->get();
+        $users= User::select('id','email','name')->paginate(5);
         return view('users.list')->with([
             'users'=> $users
         ]); 
