@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@section('title') {{'User List'}}@endsection
 @section('content')
 <div class="container-fluid">
 

@@ -1,11 +1,12 @@
 @extends('layouts.master')
+@section('title') {{'Edit User'}}@endsection
 @section('content')
 <div class="container-fluid">
 
     <!-- Page Heading -->
       <div style="display: flex; justify-content: space-between" class="mb-2">
       <h1 class="h3 mb-2 text-gray-800">Add Edit</h1>
-      <button type="button" class="btn btn-primary"><a href="" style="text-decoration: none; color: #fff;">Back</a>
+      <button type="button" class="btn btn-primary"><a href="{{route('users.index')}}" style="text-decoration: none; color: #fff;">Back</a>
        </button>
   
       </div>

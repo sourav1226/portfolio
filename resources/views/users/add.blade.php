@@ -1,9 +1,14 @@
 @extends('layouts.master')
+@section('title') {{'Add User'}}@endsection
 @section('content')
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Add User</h1>
+    <div style="display: flex; justify-content: space-between" class="mb-2">
+      <h1 class="h3 mb-2 text-gray-800">Add User</h1>
+      <button type="button" class="btn btn-primary"><a href="{{route('users.index')}}" style="text-decoration: none; color: #fff;">Back</a>
+      </button>
+   </div>
     <form method="POST" action="{{route('users.store')}}">
         @csrf
         <div class="form-group">
