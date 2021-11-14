@@ -3,7 +3,7 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Add Edit</h1>
+    <h1 class="h3 mb-2 text-gray-800">Add User</h1>
     <form method="POST" action="{{route('users.store')}}">
         @csrf
         <div class="form-group">

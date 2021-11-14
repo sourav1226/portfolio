@@ -32,11 +32,17 @@
                         <tr>
                             <td>{{$user->name}}</td>
                             <td>{{$user->email}}</td>
-                            <td>
-                                <button type="button" class="btn btn-primary"> <a href="{{route('users.index')}}"></a>
-                                    Edit</button>
-                                <button type="button" class="btn btn-danger"><a href="{{route('users.destroy')}}"></a>
-                                    Delete</button>
+                            <td style="display: flex; gap: calc(5px + 1vmin);">
+                                <button type="button" class="btn btn-primary"> <a href="{{route('users.edit',['user'=> $user->id])}}" style="text-decoration: none; color: #fff;">Edit</a>
+                                    </button>
+                               <form method="POST" action="{{route('users.destroy' , ['user'=> $user->id] )}}" >
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger" type="submit" >
+                                    Delete
+                                </button>
+                            
+                            </form>
                             </td>
                         </tr>
                         @endforeach

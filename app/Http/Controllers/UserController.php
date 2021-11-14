@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
+
 class UserController extends Controller
 {
     /**
@@ -89,7 +90,15 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        
+         $user= User::whereId($id)->first();
+         if(!$user){
+             return back()->with('error', 'User Not Found');
+
+         }
+
+         return view('users.edit')->with([
+             'user'=> $user
+         ]);
     }
 
     /**
@@ -101,7 +110,32 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+           
+        ]);
+        try {
+            DB::beginTransaction();
+
+            // 
+            $update_user=User::where('id' ,  $id)->update([
+                'name' => $request->name,
+                'email' => $request->email
+                
+            ]);
+             if(!$update_user){
+                DB::rollBack();
+                return back()->with('error','Something Went Wrong While Update');
+            }
+
+            DB::commit();
+            return redirect()->route('users.index')->with('success', 'User Updated Successfully');
+        
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            throw $th;
+        }
     }
 
     /**
@@ -112,6 +146,20 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $res=User::where('id',$id)->delete();
+       try {
+          DB::beginTransaction();
+          $delete_user= User::whereId($id)->delete();
+          if(!$delete_user){
+              DB:rollBack();
+              return back()->with('error', 'Something Went Wrong While Deleting');
+          }
+
+          DB::commit();
+          return redirect()->route('users.index')->with('success', 'User Delete Successfully');
+
+       } catch (\Throwable $th) {
+           DB::rollBack();
+           throw $th;
+       }
     }
 }
