@@ -47,8 +47,8 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar" style="">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Category Management</h6>
-                <a class="collapse-item" href="">Category List</a>
-                <a class="collapse-item" href="">Add Project</a>
+                <a class="collapse-item" href="{{route('categories.index')}}">Category List</a>
+                <a class="collapse-item" href="{{route('categories.create')}}">Add Category</a>
         
             </div>
         </div>
@@ -61,8 +61,8 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom Utilities:</h6>
-                <a class="collapse-item" href="">Projects List</a>
-                <a class="collapse-item" href="">Add Project</a>
+                <a class="collapse-item" href="{{route('projects.index')}}">Projects List</a>
+                <a class="collapse-item" href="{{route('projects.create')}}">Add Project</a>
               
             </div>
         </div>
